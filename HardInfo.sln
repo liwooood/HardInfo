@@ -7,6 +7,8 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "HardInfoDLL", "HardInfoDLL\
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "HardInfoActiveX", "HardInfoActiveX\HardInfoActiveX.vcxproj", "{126BA795-AD4D-47DE-8D93-44692123E415}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "HardInfoTest", "HardInfoTest\HardInfoTest.vcxproj", "{D37191C7-13B5-4398-9124-71ACA63AF25B}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Win32 = Debug|Win32
@@ -21,6 +23,10 @@ Global
 		{126BA795-AD4D-47DE-8D93-44692123E415}.Debug|Win32.Build.0 = Debug|Win32
 		{126BA795-AD4D-47DE-8D93-44692123E415}.Release|Win32.ActiveCfg = Release|Win32
 		{126BA795-AD4D-47DE-8D93-44692123E415}.Release|Win32.Build.0 = Release|Win32
+		{D37191C7-13B5-4398-9124-71ACA63AF25B}.Debug|Win32.ActiveCfg = Debug|Win32
+		{D37191C7-13B5-4398-9124-71ACA63AF25B}.Debug|Win32.Build.0 = Debug|Win32
+		{D37191C7-13B5-4398-9124-71ACA63AF25B}.Release|Win32.ActiveCfg = Release|Win32
+		{D37191C7-13B5-4398-9124-71ACA63AF25B}.Release|Win32.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
