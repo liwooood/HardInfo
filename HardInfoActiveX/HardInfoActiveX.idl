@@ -1,0 +1,51 @@
+// HardInfoActiveX.idl : ActiveX 控件项目的类型库源。
+
+// 此文件将由 MIDL 编译器工具处理以
+// 产生类型库(HardInfoActiveX.tlb)，该类型库将成为
+// HardInfoActiveX.ocx.
+
+#include <olectl.h>
+#include <idispids.h>
+
+[ uuid(114D5E4B-4250-4E9A-B692-9E8895C10115), version(1.0),
+  control ]
+library HardInfoActiveXLib
+{
+	importlib(STDOLE_TLB);
+
+	//  CHardInfoActiveXCtrl 的主调度接口
+	[ 
+		uuid(3052EBAE-7C7D-4237-B65A-69344FEDDB43)	
+	]
+	dispinterface _DHardInfoActiveX
+	{
+		properties:
+		methods:
+
+			[id(DISPID_ABOUTBOX)] void AboutBox();
+	};
+
+	//  CHardInfoActiveXCtrl 的事件调度接口
+
+	[ 
+		uuid(66E776CD-AF10-4F04-A741-73DB0A6D710C)	
+	]
+	dispinterface _DHardInfoActiveXEvents
+	{
+		properties:
+			//  事件接口没有任何属性
+
+		methods:
+	};
+
+	//  CHardInfoActiveXCtrl 的类信息
+	[
+		uuid(236A66B7-A197-48CB-80FD-B290C1B834AE)
+	]
+	coclass HardInfoActiveX
+	{
+		[default] dispinterface _DHardInfoActiveX;
+		[default, source] dispinterface _DHardInfoActiveXEvents;
+	};
+
+};
