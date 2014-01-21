@@ -30,4 +30,7 @@ protected:
 	DECLARE_MESSAGE_MAP()
 public:
 	afx_msg void OnBnClickedGetCpuid();
+	afx_msg void OnBnClickedGetMainboadid();
+	afx_msg void OnBnClickedGetDiskId();
+	afx_msg void OnBnClickedGetMacaddress();
 };
