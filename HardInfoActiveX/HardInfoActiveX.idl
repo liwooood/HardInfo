@@ -23,6 +23,11 @@ library HardInfoActiveXLib
 		methods:
 
 			[id(DISPID_ABOUTBOX)] void AboutBox();
+			[id(1)] BSTR getCpuId();
+			[id(2)] BSTR getMainBoardId();
+			[id(3)] BSTR getBiosId();
+			[id(4)] BSTR getDiskId();
+			[id(5)] BSTR getMacAddress();
 	};
 
 	//  CHardInfoActiveXCtrl 的事件调度接口

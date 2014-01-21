@@ -6,6 +6,11 @@
 #include "HardInfoActiveXPropPage.h"
 #include "afxdialogex.h"
 
+#include <algorithm>
+#include "../HardInfoDLL/HardInfoDLL.h"
+#include "ImportLib.h"
+
+
 #ifdef _DEBUG
 #define new DEBUG_NEW
 #endif
@@ -22,6 +27,11 @@ END_MESSAGE_MAP()
 
 BEGIN_DISPATCH_MAP(CHardInfoActiveXCtrl, COleControl)
 	DISP_FUNCTION_ID(CHardInfoActiveXCtrl, "AboutBox", DISPID_ABOUTBOX, AboutBox, VT_EMPTY, VTS_NONE)
+	DISP_FUNCTION_ID(CHardInfoActiveXCtrl, "getCpuId", dispidGetCpuId, getCpuId, VT_BSTR, VTS_NONE)
+	DISP_FUNCTION_ID(CHardInfoActiveXCtrl, "getMainBoardId", dispidgetMainBoardId, getMainBoardId, VT_BSTR, VTS_NONE)
+	DISP_FUNCTION_ID(CHardInfoActiveXCtrl, "getBiosId", dispidgetBiosId, getBiosId, VT_BSTR, VTS_NONE)
+	DISP_FUNCTION_ID(CHardInfoActiveXCtrl, "getDiskId", dispidgetDiskId, getDiskId, VT_BSTR, VTS_NONE)
+	DISP_FUNCTION_ID(CHardInfoActiveXCtrl, "getMacAddress", dispidgetMacAddress, getMacAddress, VT_BSTR, VTS_NONE)
 END_DISPATCH_MAP()
 
 // 事件映射
@@ -148,3 +158,74 @@ void CHardInfoActiveXCtrl::AboutBox()
 
 
 // CHardInfoActiveXCtrl 消息处理程序
+
+
+BSTR CHardInfoActiveXCtrl::getCpuId()
+{
+	AFX_MANAGE_STATE(AfxGetStaticModuleState());
+
+	CString strResult;
+
+	// TODO:  在此添加调度处理程序代码
+	char value[512];
+	int len = sizeof(value);
+	memset(value, '\0', len);
+	bool bRet = false;
+
+	bRet = GetCpuId(value, len);
+
+	if (bRet)
+		strResult = value;
+	else
+		strResult = "";
+
+	return strResult.AllocSysString();
+}
+
+
+BSTR CHardInfoActiveXCtrl::getMainBoardId()
+{
+	AFX_MANAGE_STATE(AfxGetStaticModuleState());
+
+	CString strResult;
+
+	// TODO:  在此添加调度处理程序代码
+
+	return strResult.AllocSysString();
+}
+
+
+BSTR CHardInfoActiveXCtrl::getBiosId()
+{
+	AFX_MANAGE_STATE(AfxGetStaticModuleState());
+
+	CString strResult;
+
+	// TODO:  在此添加调度处理程序代码
+
+	return strResult.AllocSysString();
+}
+
+
+BSTR CHardInfoActiveXCtrl::getDiskId()
+{
+	AFX_MANAGE_STATE(AfxGetStaticModuleState());
+
+	CString strResult;
+
+	// TODO:  在此添加调度处理程序代码
+
+	return strResult.AllocSysString();
+}
+
+
+BSTR CHardInfoActiveXCtrl::getMacAddress()
+{
+	AFX_MANAGE_STATE(AfxGetStaticModuleState());
+
+	CString strResult;
+
+	// TODO:  在此添加调度处理程序代码
+
+	return strResult.AllocSysString();
+}

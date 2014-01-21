@@ -14,6 +14,11 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "HardInfoTest", "HardInfoTes
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "HardInfoSO (Linux)", "HardInfoSO\HardInfoSO.vcxproj", "{4DE344C0-CF59-4B22-B1A0-D8FD1D981C66}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "HardInfoActiveX Test", "HardInfoActiveX Test", "{30390430-0EF6-46D1-A6ED-3E5FDC7D2AB3}"
+	ProjectSection(SolutionItems) = preProject
+		HardInfoAcitveXTest.html = HardInfoAcitveXTest.html
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Win32 = Debug|Win32

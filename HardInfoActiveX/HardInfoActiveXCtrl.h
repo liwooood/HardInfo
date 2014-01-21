@@ -42,6 +42,17 @@ protected:
 // 调度和事件 ID
 public:
 	enum {
+		dispidgetMacAddress = 5L,
+		dispidgetDiskId = 4L,
+		dispidgetBiosId = 3L,
+		dispidgetMainBoardId = 2L,
+		dispidGetCpuId = 1L
 	};
+protected:
+	BSTR getCpuId();
+	BSTR getMainBoardId();
+	BSTR getBiosId();
+	BSTR getDiskId();
+	BSTR getMacAddress();
 };
 
