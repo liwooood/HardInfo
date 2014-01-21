@@ -1,37 +1,38 @@
 #include "HardInfoDLL.h"
 
-#include <tchar.h>
+#include <algorithm>
+#include <strsafe.h>
 #include <comdef.h>
 #include <Wbemidl.h>
 #pragma comment(lib, "wbemuuid.lib")
 
 
-bool GetCpuId(char* id)
+bool GetCpuId(char* id, int len)
 {
-	return GetHardInfoByWMI("SELECT * FROM Win32_Processor", L"ProcessorID", id);
+	return GetHardInfoByWMI("SELECT * FROM Win32_Processor", L"ProcessorID", id, len);
 }
 
-bool GetMainBoardId(char* id)
+bool GetMainBoardId(char* id, int len)
 {
-	return GetHardInfoByWMI("SELECT * FROM Win32_BaseBoard", L"SerialNumber", id);
+	return GetHardInfoByWMI("SELECT * FROM Win32_BaseBoard", L"SerialNumber", id, len);
 }
 
-bool GetBiosId(char* id)
+bool GetBiosId(char* id, int len)
 {
-	return GetHardInfoByWMI("SELECT * FROM Win32_BIOS", L"SerialNumber", id);
+	return GetHardInfoByWMI("SELECT * FROM Win32_BIOS", L"SerialNumber", id, len);
 }
 
-bool GetDiskId(char* id)
+bool GetDiskId(char* id, int len)
 {
-	return GetHardInfoByWMI("SELECT * FROM Win32_DiskDrive", L"SerialNumber", id);
+	return GetHardInfoByWMI("SELECT * FROM Win32_DiskDrive", L"SerialNumber", id, len);
 }
 
-bool GetMacAddress(char* mac)
+bool GetMacAddress(char* mac, int len)
 {
-	return GetHardInfoByWMI("SELECT * FROM Win32_NetworkAdapter WHERE (MACAddress Is Not NULL) AND (NetConnectionStatus = 2) AND (PNPDeviceID LIKE '%PCI%')", L"MACAddress", mac);
+	return GetHardInfoByWMI("SELECT * FROM Win32_NetworkAdapter WHERE (MACAddress Is Not NULL) AND (NetConnectionStatus = 2) AND (PNPDeviceID LIKE '%PCI%')", L"MACAddress", mac, len);
 }
 
-bool GetHardInfoByWMI(const char* wql, LPCWSTR prop, char* value)
+bool GetHardInfoByWMI(const char* wql, LPCWSTR prop, char* value, int len)
 {
 	bool bRet = false;
 
@@ -139,14 +140,17 @@ bool GetHardInfoByWMI(const char* wql, LPCWSTR prop, char* value)
 		
 		hr = pclsObj->Get(prop, 0, &vtProp, 0, 0);
 		_bstr_t bstr = vtProp.bstrVal;
-		value = bstr;
-		bRet = true;
-	
+		
+		hr = StringCchCopy(value, len, bstr);
+		
 		
 
 		VariantClear(&vtProp);
 		pclsObj->Release();
 		pclsObj = NULL;
+
+		bRet = true;
+		break; // 如果存在多个值，只返回第一个
 	}
 	
 

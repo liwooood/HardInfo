@@ -33,4 +33,5 @@ public:
 	afx_msg void OnBnClickedGetMainboadid();
 	afx_msg void OnBnClickedGetDiskId();
 	afx_msg void OnBnClickedGetMacaddress();
+	afx_msg void OnBnClickedGetBiosid();
 };

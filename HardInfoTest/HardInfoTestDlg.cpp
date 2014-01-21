@@ -7,6 +7,7 @@
 #include "HardInfoTestDlg.h"
 #include "afxdialogex.h"
 
+#include <algorithm>
 #include "../HardInfoDLL/HardInfoDLL.h"
 #include "ImportLib.h"
 
@@ -37,6 +38,7 @@ BEGIN_MESSAGE_MAP(CHardInfoTestDlg, CDialogEx)
 	ON_BN_CLICKED(IDC_GET_MAINBOADID, &CHardInfoTestDlg::OnBnClickedGetMainboadid)
 	ON_BN_CLICKED(IDC_GET_DISK_ID, &CHardInfoTestDlg::OnBnClickedGetDiskId)
 	ON_BN_CLICKED(IDC_GET_MACADDRESS, &CHardInfoTestDlg::OnBnClickedGetMacaddress)
+	ON_BN_CLICKED(IDC_GET_BIOSID, &CHardInfoTestDlg::OnBnClickedGetBiosid)
 END_MESSAGE_MAP()
 
 
@@ -132,6 +134,8 @@ void CHardInfoTestDlg::OnBnClickedGetDiskId()
 
 	bRet = GetDiskId(value, len);
 
+	std::remove(value, value + len, ' ');
+
 	TRACE("value=%s\n", value);
 }
 
@@ -145,6 +149,20 @@ void CHardInfoTestDlg::OnBnClickedGetMacaddress()
 	bool bRet = false;
 
 	bRet = GetMacAddress(value, len);
+
+	TRACE("value=%s\n", value);
+}
+
+
+void CHardInfoTestDlg::OnBnClickedGetBiosid()
+{
+	char value[512];
+	int len = sizeof(value);
+	memset(value, '\0', len);
+
+	bool bRet = false;
+
+	bRet = GetBiosId(value, len);
 
 	TRACE("value=%s\n", value);
 }
