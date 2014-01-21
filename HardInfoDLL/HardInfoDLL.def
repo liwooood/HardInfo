@@ -1,0 +1,7 @@
+LIBRARY HardInfoDLL
+EXPORTS
+	GetCpuId @1
+	GetMainBoardId @2
+	GetBiosId @3
+	GetDiskId @4
+	GetMacAddress @5
