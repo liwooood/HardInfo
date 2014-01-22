@@ -106,7 +106,7 @@ void CHardInfoTestDlg::OnBnClickedGetCpuid()
 
 	bRet = GetCpuId(value, len);
 
-	TRACE("value=%s\n", value);
+	AfxMessageBox((LPCTSTR)value);
 }
 
 
@@ -120,7 +120,7 @@ void CHardInfoTestDlg::OnBnClickedGetMainboadid()
 
 	bRet = GetMainBoardId(value, len);
 
-	TRACE("value=%s\n", value);
+	AfxMessageBox((LPCTSTR)value);;
 }
 
 
@@ -136,7 +136,7 @@ void CHardInfoTestDlg::OnBnClickedGetDiskId()
 
 	std::remove(value, value + len, ' ');
 
-	TRACE("value=%s\n", value);
+	AfxMessageBox((LPCTSTR)value);
 }
 
 
@@ -150,7 +150,7 @@ void CHardInfoTestDlg::OnBnClickedGetMacaddress()
 
 	bRet = GetMacAddress(value, len);
 
-	TRACE("value=%s\n", value);
+	AfxMessageBox((LPCTSTR)value);
 }
 
 
@@ -164,5 +164,6 @@ void CHardInfoTestDlg::OnBnClickedGetBiosid()
 
 	bRet = GetBiosId(value, len);
 
-	TRACE("value=%s\n", value);
+	
+	AfxMessageBox((LPCTSTR)value);
 }

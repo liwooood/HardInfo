@@ -20,6 +20,7 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "HardInfoActiveX Test", "HardInfoActiveX Test", "{30390430-0EF6-46D1-A6ED-3E5FDC7D2AB3}"
 	ProjectSection(SolutionItems) = preProject
 		HardInfoAcitveXTest.html = HardInfoAcitveXTest.html
+		test.html = test.html
 	EndProjectSection
 EndProject
 Global

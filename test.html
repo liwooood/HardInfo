@@ -1,0 +1,47 @@
+<HTML>
+<HEAD>
+<TITLE>New Page</TITLE>
+<script language="javascript" type="text/javascript">
+function getCpuId()
+{
+var id = HardInfoActiveX1.getCpuId();
+alert(id);
+}
+function getMainBoardId()
+{
+var id = HardInfoActiveX1.getMainBoardId();
+alert(id);
+}
+function getBiosId()
+{
+var id = HardInfoActiveX1.getBiosId();
+alert(id);
+}
+function getDiskId()
+{
+var id = HardInfoActiveX1.getDiskId();
+alert(id);
+}
+function getMacAddress()
+{
+var id = HardInfoActiveX1.getMacAddress();
+alert(id);
+}
+</script>
+</HEAD>
+<BODY>
+
+<OBJECT ID="HardInfoActiveX1" WIDTH=0 HEIGHT=0
+ CLASSID="CLSID:236A66B7-A197-48CB-80FD-B290C1B834AE">
+    <PARAM NAME="_Version" VALUE="65536">
+    <PARAM NAME="_ExtentX" VALUE="2646">
+    <PARAM NAME="_ExtentY" VALUE="1323">
+    <PARAM NAME="_StockProps" VALUE="0">
+</OBJECT>
+<a href="#" onClick="getCpuId()"> cpuid </a> <br/>
+<a href="#" onClick="getMainBoardId()"> MainBoardId </a> <br/>
+<a href="#" onClick="getBiosId()"> BiosId </a> <br/>
+<a href="#" onClick="getDiskId()"> DiskId </a> <br/>
+<a href="#" onClick="getMacAddress()"> MacAddress </a> <br/>
+</BODY>
+</HTML>
