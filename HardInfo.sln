@@ -6,6 +6,9 @@ MinimumVisualStudioVersion = 10.0.40219.1
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "HardInfoDLL", "HardInfoDLL\HardInfoDLL.vcxproj", "{CE498B0E-44C1-42A8-8DFC-58C0592C3DAC}"
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "HardInfoActiveX", "HardInfoActiveX\HardInfoActiveX.vcxproj", "{126BA795-AD4D-47DE-8D93-44692123E415}"
+	ProjectSection(ProjectDependencies) = postProject
+		{CE498B0E-44C1-42A8-8DFC-58C0592C3DAC} = {CE498B0E-44C1-42A8-8DFC-58C0592C3DAC}
+	EndProjectSection
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "HardInfoTest", "HardInfoTest\HardInfoTest.vcxproj", "{D37191C7-13B5-4398-9124-71ACA63AF25B}"
 	ProjectSection(ProjectDependencies) = postProject

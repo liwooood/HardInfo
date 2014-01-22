@@ -45,13 +45,14 @@ bool GetHardInfoByWMI(const char* wql, LPCWSTR prop, char* value, int len)
 	if (wql == NULL || prop == NULL)
 		return bRet;
 
-	hr = CoInitializeEx(0, COINIT_MULTITHREADED);
+	//hr = CoInitializeEx(0, COINIT_MULTITHREADED);
+	hr = CoInitializeEx(0, COINIT_APARTMENTTHREADED);
 	if (FAILED(hr))
 	{
 		return bRet;
 	}
 
-
+	/*
 	hr = CoInitializeSecurity(
 		NULL,
 		-1,      // COM negotiates service                  
@@ -67,6 +68,7 @@ bool GetHardInfoByWMI(const char* wql, LPCWSTR prop, char* value, int len)
 	{
 		goto error;
 	}
+	*/
 
 
 	hr = CoCreateInstance(

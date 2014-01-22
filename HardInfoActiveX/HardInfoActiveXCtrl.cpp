@@ -175,9 +175,18 @@ BSTR CHardInfoActiveXCtrl::getCpuId()
 	bRet = GetCpuId(value, len);
 
 	if (bRet)
+	{
+		
 		strResult = value;
+		
+	}
 	else
+	{
+		
 		strResult = "";
+		
+	}
+		
 
 	return strResult.AllocSysString();
 }
@@ -190,7 +199,25 @@ BSTR CHardInfoActiveXCtrl::getMainBoardId()
 	CString strResult;
 
 	// TODO:  在此添加调度处理程序代码
+	char value[512];
+	int len = sizeof(value);
+	memset(value, '\0', len);
+	bool bRet = false;
 
+	bRet = GetMainBoardId(value, len);
+
+	if (bRet)
+	{
+
+		strResult = value;
+
+	}
+	else
+	{
+
+		strResult = "";
+
+	}
 	return strResult.AllocSysString();
 }
 
@@ -202,7 +229,25 @@ BSTR CHardInfoActiveXCtrl::getBiosId()
 	CString strResult;
 
 	// TODO:  在此添加调度处理程序代码
+	char value[512];
+	int len = sizeof(value);
+	memset(value, '\0', len);
+	bool bRet = false;
 
+	bRet = GetBiosId(value, len);
+
+	if (bRet)
+	{
+
+		strResult = value;
+
+	}
+	else
+	{
+
+		strResult = "";
+
+	}
 	return strResult.AllocSysString();
 }
 
@@ -214,7 +259,25 @@ BSTR CHardInfoActiveXCtrl::getDiskId()
 	CString strResult;
 
 	// TODO:  在此添加调度处理程序代码
+	char value[512];
+	int len = sizeof(value);
+	memset(value, '\0', len);
+	bool bRet = false;
 
+	bRet = GetDiskId(value, len);
+
+	if (bRet)
+	{
+
+		strResult = value;
+
+	}
+	else
+	{
+
+		strResult = "";
+
+	}
 	return strResult.AllocSysString();
 }
 
@@ -226,6 +289,25 @@ BSTR CHardInfoActiveXCtrl::getMacAddress()
 	CString strResult;
 
 	// TODO:  在此添加调度处理程序代码
+	char value[512];
+	int len = sizeof(value);
+	memset(value, '\0', len);
+	bool bRet = false;
+
+	bRet = GetMacAddress(value, len);
+
+	if (bRet)
+	{
+
+		strResult = value;
+
+	}
+	else
+	{
+
+		strResult = "";
+
+	}
 
 	return strResult.AllocSysString();
 }
