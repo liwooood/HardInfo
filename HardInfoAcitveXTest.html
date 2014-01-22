@@ -4,8 +4,31 @@
 <head>
     <meta charset="utf-8" />
     <title></title>
+    <script>
+        var hardInfo;
+
+        function checkActiveXObj() {
+            try {
+                hardInfo = new ActiveXObject("HARDINFOACTIVEX.HardInfoActiveXCtrl.1");
+                var cpuid = hardInfo.getCpuId();
+                alert(cpuid);
+            } catch (ex) {
+                alert(ex);
+                return null;
+            }
+        }
+
+        function getCpuId() {
+            
+        }
+
+        checkActiveXObj();
+        getCpuId();
+
+    </script>
+
 </head>
 <body>
-
+    
 </body>
 </html>
